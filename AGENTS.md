@@ -1,6 +1,7 @@
 # AGENTS.md
 
 This file indexes the documentation maintained in this repository, for both human contributors and coding agents working in it. Its only job is to point to the right document. When a new document is added under `docs/`, or a root-level document changes purpose, update the table below in the same change.
+The rules in this document must be treated as legally binding.
 
 ## Rules
 
@@ -12,7 +13,9 @@ These rules are mandatory for all work in this repository, regardless of languag
 - Never leave TODO or similar placeholder comments. If a piece of development is undertaken, it must be completed, not marked for later.
 - Never perform source control operations: no commit, stage, branch, push, or similar action. No source control actions are allowed.
 - SOLID principles must be followed and documented. Where a design applies one of the five principles, state which principle and why.
-- Every feature must be documented under `docs/features/`.
+- Every feature must be documented under `docs/features/`. After each implementation/code change evaluate the changes that have been performed and:
+  - If the change concerns existing documentation, update it.
+  - If the change is totally new, evaluate whether it needs to go under a current document or if a new one needs to be created. Ask the user if unsure.
 - Never write forward-looking statements in comments. Do not write things like "did X for now, will do Y later" or "will enhance X later." A comment describes the code as it exists, not a plan for its future.
 - Never mix simulated data with real API responses and data handling. A code path either works against real data end to end or is clearly and separately a simulation/test path; the two must never blend.
 - Do not assume anything. If the slightest thing is unclear or ambiguous, ask questions until it is resolved before proceeding.
@@ -29,23 +32,8 @@ These two documents are standalone technical references. They are not tied to th
 
 | Document | Description |
 |---|---|
-| [`docs/flutter-architecture-and-guidelines.md`](docs/flutter-architecture-and-guidelines.md) | Flutter frontend architecture (layered MVVM per Flutter's official app-architecture guidance), modularization patterns, advanced performance practices, and Dart code style. |
-| [`docs/aspnet-architecture-and-guidelines.md`](docs/aspnet-architecture-and-guidelines.md) | ASP.NET Core backend architecture (Hexagonal / ports and adapters), EF Core code-first with PostgreSQL, EF Core and ASP.NET Core performance, transaction/RBAC/isolation security, and C# code guidelines. |
-
-## Project documentation (current Python/FastAPI pipeline)
-
-These documents describe the Bitcoin multi-horizon forecasting and decision engine as it currently exists in this repository.
-
-| Document | Description |
-|---|---|
-| [`ARCHITECTURE.md`](ARCHITECTURE.md) | End-to-end system architecture: component choices, data flow, and the point-in-time correctness invariant. |
-| [`PLAN.md`](PLAN.md) | The project's overall build plan. |
-| [`ROADMAP.md`](ROADMAP.md) | Phased delivery roadmap. |
-| [`SETUP.md`](SETUP.md) | Environment setup: accounts, API keys, local dev, and how the pipeline stages run. |
-| [`DATA_SOURCES.md`](DATA_SOURCES.md) | The external data sources the pipeline ingests from. |
-| [`DATA_GAPS.md`](DATA_GAPS.md) | Known data gaps and the reasoning behind data source substitutions. |
-| [`MODELING.md`](MODELING.md) | The forecasting models used per horizon. |
-| [`DECISION_ENGINE.md`](DECISION_ENGINE.md) | The signal/decision logic (`S_h` formula, thresholds) that turns forecasts into actions. |
+| [`docs/FLUTTER_ARCHITECTURE_AND_GUIDELINES.md`](docs/FLUTTER_ARCHITECTURE_AND_GUIDELINES.md) | Flutter frontend architecture (layered MVVM per Flutter's official app-architecture guidance), modularization patterns, advanced performance practices, and Dart code style. |
+| [`docs/ASPNET_ARCHITECTURE_AND_GUIDELINES.md`](docs/ASPNET_ARCHITECTURE_AND_GUIDELINES.md) | ASP.NET Core backend architecture (Hexagonal / ports and adapters), EF Core code-first with PostgreSQL, EF Core and ASP.NET Core performance, transaction/RBAC/isolation security, and C# code guidelines. |
 
 ## Maintenance note
 
